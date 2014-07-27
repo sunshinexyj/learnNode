@@ -10,4 +10,18 @@ router.get('/', function(req, res) {
     res.end();
 });
 
+router.get('/:id', function  (req, res, next) {
+    res.send('id:' + req.params.id+'\n');
+    res.send('list all users \n');
+//    res.end();
+    next(res);
+});
+
+
+router.get('/*', function  (req, res, next) {
+    console.log('list all user');
+    res.send('list all users \n');
+    res.end();
+});
+
 module.exports = router;
