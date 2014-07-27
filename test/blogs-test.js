@@ -2,15 +2,15 @@ var vows = require('vows');
 var apiEasy = require('api-easy');
 var assert = require('assert');
 
-var suit = apiEasy.describe("/blogs/*.html")
+var suit = apiEasy.describe("/markdown/blogs/*.html")
 
 suit.discuss('when vists the markdown blog,')
     .use('localhost', 3000)
     .setHeader('Content-Type', 'text/html; charset=utf-8')
-    .path('/blogs/')
+    .path('/markdown/blogs/')
 
     .discuss('if the markdown file is exists')
-    .get('first.html')
+    .get('text.html')
     .expect(200)
 
     .undiscuss()
@@ -18,4 +18,4 @@ suit.discuss('when vists the markdown blog,')
     .get('unknow.html')
     .expect(404)
 
-    .export(module); 
+    .export(module);
