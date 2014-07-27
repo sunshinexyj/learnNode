@@ -19,16 +19,16 @@ suite.discuss("when visit home page")
     .export(module);
 
 
-suite.discuss("when visit home page")
-    .discuss('can view blog list and it should response 200 status')
-    .use('localhost', 3000)
-    .setHeader('Content-Type', 'text/html; charset=utf-8')
-    .get()
-    .expect(200)
-    .expect("should respond with x-powered-by",
-    function (err, res, body) {
-        // express
-        assert.include(res.headers, 'x-powered-by');
-    })
-    .expect(404)
-    .export(module);
+//suite.discuss("when visit home page")
+//    .discuss('can view blog list and it should response 200 status')
+//    .use('localhost', 3000)
+//    .setHeader('Content-Type', 'text/html; charset=utf-8')
+//    .get()
+//    .expect(200)
+//    .expect("should respond with x-powered-by",
+//    function (err, res, body) {
+//        // express
+//        assert.include(res.headers, 'x-powered-by');
+//    })
+//    .expect(404)
+//    .export(module);
