@@ -1,0 +1,16 @@
+link(rel='stylesheet', href='/libs/prettify/sunburst.css', type="text/css")
+script(type='text/javascript', src='/libs/prettify/prettify.js')
+script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js')
+style(type="text/css").
+    h1 {
+        text-align:center;
+    }
+
+div.blog_main
+!{blog_content}
+//script
+    // markdown-js会用<code><pre></pre></code>将代码包起来
+    // 不过无法为其添加prettyprint class属性
+    // 这里采用jquery手动添加
+    //$('code, pre').addClass('prettyprint');
+    //prettyPrint();

@@ -2,6 +2,7 @@ var express = require('express');
 var markdown = require('markdown-js');
 var path = require('path');
 var debug = require('debug')('learnNode');
+var fs=require("fs");
 
 var router = express.Router();
 
@@ -28,9 +29,17 @@ router.get('/blogs/:title.html', function(req, res, next) {
     var filePath = path.normalize('./views/' + urlPath);
     path.exists(filePath, function  (exists) {
         if(!exists) {
+//            console.log('jump 404');
             next();
         } else {
-            res.render(urlPath, {layout: false});
+            var content = fs.readFileSync(filePath, 'utf8');
+            //　这里将markdown转成html, 然后以参数形式输出
+            var html_content = markdown.parse(content);
+
+            res.render('blogs/show', {
+                title: " - Blogs"
+                , blog_content: html_content
+            });
         }
     });
 
