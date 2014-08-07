@@ -17,7 +17,7 @@ var router = express.Router();
 //    res.render('index.md', {layout: false});
 //});
 
-router.get('/:title.jade', function(req, res, next) {
+router.get('/:title', function(req, res, next) {
     res.render(req.params.title);
 //    console.log(app.get('views'));
 //    debug(app.get('views')+'');
