@@ -40,7 +40,7 @@ app.use(function (req, res, next) {
     res.status(404);
     res.render('404', {
         status: 404,
-        title: '卧槽页面没找到'
+        title: 'baka!页面没找到!'
     });
     res.end();
 });
