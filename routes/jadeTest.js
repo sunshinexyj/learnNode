@@ -18,7 +18,12 @@ var router = express.Router();
 //});
 
 router.get('/:title.jade', function(req, res, next) {
-    res.render(req.params.title);
+    res.render(req.params.title,function(err, html){
+        if(err)
+        {
+            next();
+        }
+    });
 //    console.log(app.get('views'));
 //    debug(app.get('views')+'');
 
