@@ -17,11 +17,16 @@ var router = express.Router();
 //    res.render('index.md', {layout: false});
 //});
 
-router.get('/:title.jade', function(req, res, next) {
+router.get('/:title', function(req, res, next) {
     res.render(req.params.title,function(err, html){
         if(err)
         {
             next();
+        }
+        else
+        {
+            res.send(html)
+            res.end();
         }
     });
 //    console.log(app.get('views'));
